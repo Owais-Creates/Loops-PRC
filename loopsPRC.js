@@ -24,6 +24,7 @@ console.log(`${count}`);
 let nonReverseNum = 123456;
 let reverseNum = 0;
 
+// USING WHILE LOOP
 while (nonReverseNum > 0) {
 
     let lastDigit = nonReverseNum % 10;
@@ -32,7 +33,53 @@ while (nonReverseNum > 0) {
 
 }
 
-console.log( reverseNum );
+console.log(reverseNum);
 
 //---------------------------------------------------------------------------------------------------
 
+// Q3 - Write a program which takes two values "LOWER LIMIT" and "UPPER LIMIT" and print the prime numbers in between the "LL" and "UL"
+
+let lowerLimit = 10;
+let upperLimit = 30;
+
+// USING FOR LOOP
+for (i = lowerLimit; i <= upperLimit; i++) {
+    let count = 0;
+
+    for (div = 1; div <= i; div++) {
+        if (i % div == 0) {
+            count++;
+
+            if (count > 2) {
+                break
+            }
+        }
+    }
+
+    if (count == 2) {
+        console.log(`prime numbers ${i}`);
+    }
+}
+
+//---------------------------------------------------------------------------------------------------
+
+// Q4 - Write a program which prints the given number like this.
+// let num = 786
+/* OUTPUT - 7
+            8
+            6 
+            */
+
+let num = 786;
+let hundred = 100;
+
+while (num > 0) {
+
+    let digit = num / hundred;
+    console.log(Math.floor(digit));
+    num = num % hundred;;
+    hundred = (hundred / 10);
+
+}
+
+//---------------------------------------------------------------------------------------------------
